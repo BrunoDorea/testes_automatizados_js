@@ -1,13 +1,16 @@
 {
   "name": "app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node api.js",
     "dev": "node --watch api.js",
-    "test": "node --watchh --test test/"
+    "test": "node --test test/",
+    "test:cov-native": "node --experimental-test-coverage --test test/",
+    "test:cov": "npx c8 --exclude ./index.js --reporter html --reporter text node --test test/",
+    "test:watch": "node --watch --test test/"
   },
   "keywords": [],
   "author": "erickwendel",
@@ -17,6 +20,6 @@
     "jsonwebtoken": "^9.0.0"
   },
   "engines": {
-    "node": "v20.5.0"
+    "node": "v20.4.0"
   }
 }
